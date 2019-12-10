@@ -21,7 +21,7 @@ public class Mensagem {
 		this.emitente = emitente;
 		
 		this.destinatario = destinatario;
-		if( texto.length() > this.TEXTO_MAX ) {
+		if( texto.length() > this.TEXTO_MAX || texto == null || texto == "" ) {
 			throw new Exception("Texto ultrapassa o limite de caracteres");
 		}
 		this.texto = texto;

@@ -49,7 +49,7 @@ public class Repositorio {
 		return  
 				new ArrayList<Pessoa> (pessoas.values());	//TreeMap --> ArrayList
 	}
-	public int getTotalMensagens(){
+	public static int getTotalMensagens(){
 		return mensagens.size();
 	}
 }
