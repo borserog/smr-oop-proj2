@@ -12,8 +12,8 @@ import modelo.Pessoa;
 import modelo.Mensagem;
 
 public class Repositorio {
-	private static TreeMap<String,Pessoa> pessoas = new TreeMap<>();
-	private static ArrayList<Mensagem> mensagens = new ArrayList<>();
+	private TreeMap<String,Pessoa> pessoas = new TreeMap<>();
+	private ArrayList<Mensagem> mensagens = new ArrayList<>();
 	
 	public void adicionarUsuario(Pessoa usuario){
 		pessoas.put(usuario.getEmail()+usuario.getSenha(),  usuario); //chave concatenada
@@ -42,14 +42,14 @@ public class Repositorio {
 	}
 
 
-	public static ArrayList<Mensagem> getMensagens() {
+	public ArrayList<Mensagem> getMensagens() {
 		return mensagens;
 	}
-	public static ArrayList<Pessoa> getPessoas() {
+	public ArrayList<Pessoa> getPessoas() {
 		return  
 				new ArrayList<Pessoa> (pessoas.values());	//TreeMap --> ArrayList
 	}
-	public static int getTotalMensagens(){
+	public int getTotalMensagens(){
 		return mensagens.size();
 	}
 }

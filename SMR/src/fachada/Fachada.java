@@ -9,50 +9,86 @@ import java.util.ArrayList;
 
 import modelo.Prateleira;
 import modelo.Produto;
+import modelo.Administrador;
 import modelo.Pessoa;
 import repositorio.Repositorio;
+import javax.swing.ImageIcon;
 
 public class Fachada {
 	private static Repositorio repositorio = new Repositorio();
 	private static Pessoa logado;
-	private static int idprateleira=0;	//autoincremento
+	private static int idmensagem=0;	//autoincremento
 
 	public static Pessoa login(String email, String senha) throws  Exception {
-		if(logado!=null)
-			throw new Exception("ja existe um usuario logado:"+logado.getEmail());
-		
-		Pessoa usu = repositorio.localizarUsuario(email,senha);
-		if(usu==null)
-			throw new Exception("email ou senha invalida:");
-		logado = usu;
-		return usu;
+		if(logado != null) {
+			throw new Exception("Um usuario já está logado: " + logado.getEmail());
+		}
+			
+		Pessoa usuario = repositorio.localizarUsuario(email,senha);
+		if( usuario == null ) {
+			throw new Exception("Email ou senha inválidos");
+		}
+			
+		logado = usuario;
+		return usuario;
 	}
-	public static Pessoa logoff(String email, String senha) throws  Exception {
-		if(logado==null)
-			throw new Exception("nao existe um usuario logado:");
-		
-		Pessoa usu = repositorio.localizarUsuario(email,senha);
-		if(usu==null)
-			throw new Exception("email ou senha invalida:");
-		if(usu!=logado)
-			throw new Exception("este usuario nao esta logado:");
-		
+	public static void logoff(String email, String senha) throws  Exception {
+		if( logado == null ) {
+			throw new Exception("Nenhum usuario está logado no momento");
+		}
+				
+		Pessoa usuario = repositorio.localizarUsuario(email,senha);
+		if( usuario == null ) {
+			throw new Exception("Email ou senha inválidos");
+		}
+			
+		if( usuario != logado) {
+			throw new Exception("Este não é o usuário logado");
+		}	
 		logado = null; 
-		return usu;
 	}
 	public static Pessoa getLogado() {
 		return logado;
 	}
-	public static Pessoa cadastrarUsuario(String email, String senha) 
+	public static Pessoa cadastrarUsuario(
+			String email, 
+			String senha, 
+			String nome, 
+			ImageIcon imagem) 
 			throws  Exception{
-		Pessoa usu = repositorio.localizarUsuario(email,senha);
-		if (usu!=null)
-			throw new Exception("cadastrar usuario - ja cadastrado:" + email);
 		
-		usu = new Pessoa(email,senha);
-		repositorio.adicionar(usu);
-		return usu;
+		Pessoa usuario = repositorio.localizarUsuario(email,senha);
+		if ( usuario != null ) {
+			throw new Exception("Usuário " + email + " já cadastrado");
+		}
+		
+		usuario = new Pessoa(email, senha, nome, imagem);
+		
+		repositorio.adicionarUsuario(usuario);
+		
+		return usuario;
 	}
+	public static Pessoa cadastrarAdministrador(
+			String email, 
+			String senha, 
+			String nome, 
+			ImageIcon imagem,
+			String setor) 
+			throws  Exception{
+		
+		Pessoa admin = repositorio.localizarUsuario(email,senha);
+		if ( admin != null ) {
+			throw new Exception("Usuário " + email + " já cadastrado");
+		}
+		
+		admin = new Administrador(email, senha, nome, imagem, setor);
+		
+		repositorio.adicionarUsuario(admin);
+		
+		return admin;
+	}
+	
+	
 	
 	public static Produto cadastrarProduto(String nome, double preco) 
 			throws  Exception{

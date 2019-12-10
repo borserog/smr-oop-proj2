@@ -4,7 +4,7 @@ import modelo.*;
 import repositorio.*;
 
 public class MeuTeste {
-
+	@Deprecated	
 	public static void main(String[] args) {
 		
 			Repositorio repositorio = new Repositorio();

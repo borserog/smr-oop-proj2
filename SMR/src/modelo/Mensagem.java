@@ -2,7 +2,6 @@ package modelo;
 import java.time.LocalDateTime;
 
 public class Mensagem {
-	public static int id = 0;
 	private int mId;
 	private Pessoa emitente;
 	private Pessoa destinatario;
@@ -11,13 +10,13 @@ public class Mensagem {
 	private int TEXTO_MAX = 200;
 	
 	public Mensagem(
+			int mId,
 			Pessoa emitente, 
 			Pessoa destinatario, 
 			String texto
 		) throws Exception {
 		
-		Mensagem.id++;
-		this.mId = Mensagem.id;
+		this.mId = mId;
 		this.emitente = emitente;
 		
 		this.destinatario = destinatario;

@@ -11,10 +11,11 @@ public class Pessoa {
 	private ArrayList<Mensagem> caixaEntrada = new ArrayList<Mensagem>();
 	private ArrayList<Mensagem> caixaSaida = new ArrayList<Mensagem>();
 	 
-	public Pessoa(String email, String senha, String nome) {
+	public Pessoa(String email, String senha, String nome, ImageIcon imagem) {
 		this.email = email;
 		this.senha = senha;
 		this.nome = nome;
+		this.imagem = imagem;
 	}
 	
 	public String getEmail() {
@@ -36,6 +37,13 @@ public class Pessoa {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public ImageIcon getImagem() {
+		return imagem;
+	}
+	public void setImagem(ImageIcon imagem) {
+		this.imagem = imagem;
 	}
 	
 	public void addMensagemSaida(Mensagem mensagem) {
