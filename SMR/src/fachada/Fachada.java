@@ -88,6 +88,63 @@ public class Fachada {
 		return admin;
 	}
 	
+	public static ArrayList<Pessoa> listarPessoas(String termoBusca) {
+		ArrayList<Pessoa> retorno;
+		for (Pessoa pessoa :: repositorio.getPessoas()) {
+			if (pessoa.getNome().equals(termoBusca)) {
+				retorno.add(pessoa);
+			}
+		}
+		throws Exception {
+			if (retorno.size() == 0)
+				throw new Exception("Não encontramos usuário com o seguinte termo de busca: "+termoBusca);
+		}
+		return retorno;
+	}
+	
+	public static ArrayList<Pessoa> listarPessoas() {
+		return repositorio.getPessoas();
+	}	
+	
+	public static Mensagem enviarMensagem (String emailDestinatário, String textoMensagem) {
+		throws Exception {
+			if (logado == null)
+				throw new Exception("Você precisa estar logado para enviar mensagem");			
+		}
+		
+		idMensagem++;
+		Mensagem msg = new Mensagem(idMensagem, logado.getEmail(), emailDestinatário, textoMensagem);
+		repositorio.adicionarMensagem(msg);
+		return msg;
+	}
+	
+	public static ArrayList<Mensagem> listarCaixaEntrada() {
+		throws Exception {
+			if (logado == null)
+				throw new Exception("Você precisa estar logado para listar mensagens");			
+		}
+		
+		return logado.getMensagensEntrada();
+	}
+	
+	public static ArrayList<Mensagem> listarCaixaSaida() {
+		throws Exception {
+			if (logado == null)
+				throw new Exception("Você precisa estar logado para listar mensagens");			
+		}
+		
+		return logado.getMensagensSaida();
+	}
+	
+	
+	public static Mensagem apagarMensagem(int idMensagem) {
+		Mensagem remover = repositorio.localizarMensagem(idMensagem);		
+		throws Exception {
+			if (remover == null || !remover.getEmitente().getNome().equals(logado.getNome()) && !remover.getDestinatario().getNome().equals(logado.getNome()))
+				throw new Exception("Nenhuma mensagem encontrada com esse id");			
+		}
+		
+	}
 	
 	
 	public static Produto cadastrarProduto(String nome, double preco) 
