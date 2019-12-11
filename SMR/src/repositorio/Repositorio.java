@@ -1,8 +1,8 @@
 
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
- * Programação Orientada a Objetos
- * Prof. Fausto Maranhão Ayres
+ * Programaï¿½ï¿½o Orientada a Objetos
+ * Prof. Fausto Maranhï¿½o Ayres
  **********************************/
 package repositorio;
 import java.util.ArrayList;
@@ -21,17 +21,24 @@ public class Repositorio {
 	public void removerUsuario(Pessoa usuario){
 		pessoas.remove(usuario.getEmail()+usuario.getSenha());
 	}
+
 	public Pessoa localizarUsuario(String email, String senha){
 		return pessoas.get(email+senha);
 	}
-	
+
+	public Pessoa localizarUsuario(String email){
+		return pessoas.get(email);
+	}
+
 		
 	public void adicionarMensagem(Mensagem mensagem){
 		mensagens.add(mensagem);
 	}
+
 	public void removerMensagem(Mensagem mensagem){
 		mensagens.remove(mensagem);
 	}
+
 	public Mensagem localizarMensagem(int mId){
 		for(Mensagem mensagem : mensagens){
 			if(mensagem.getMid() == mId) {

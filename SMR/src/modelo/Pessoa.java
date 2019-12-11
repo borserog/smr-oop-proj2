@@ -49,6 +49,7 @@ public class Pessoa {
 	public void addMensagemSaida(Mensagem mensagem) {
 		this.caixaSaida.add(mensagem);
 	}
+	public void removerMensagemSaida(Mensagem mensagem) {this.caixaSaida.remove(mensagem);}
 	public ArrayList<Mensagem> getMensagensSaida() {
 		return this.caixaSaida;
 	}
@@ -56,6 +57,7 @@ public class Pessoa {
 	public void addMensagemEntrada(Mensagem mensagem) {
 		this.caixaEntrada.add(mensagem);
 	}
+	public void removerMensagemEntrada(Mensagem mensagem) {this.caixaEntrada.remove(mensagem);}
 	public ArrayList<Mensagem> getMensagensEntrada() {
 		return this.caixaEntrada;
 	}
