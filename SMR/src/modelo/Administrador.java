@@ -9,15 +9,6 @@ import repositorio.Repositorio;
 public class Administrador extends Pessoa {
 	String setor;
 
-
-	public String getSetor() {
-		return setor;
-	}
-
-	public void setSetor(String setor) {
-		this.setor = setor;
-	}
-
 	public Administrador(String email, String senha, String nome, ImageIcon imagem, String setor) {
 		super(email, senha, nome, imagem);
 		
@@ -31,5 +22,12 @@ public class Administrador extends Pessoa {
 		this.setor = setor;
 
 	}
+		
+	public String getSetor() {
+		return setor;
+	}
 
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
 }

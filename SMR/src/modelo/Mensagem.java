@@ -65,8 +65,8 @@ public class Mensagem {
 		return "\nMENSAGEM:\n"
 				+ "Id: " + this.mId + "\n"
 				+ "Enviado por: " + this.emitente.getEmail() + "\n"
-				+ "Destinat�rio: " + this.destinatario.getEmail() + "\n"
-				+ "Conte�do: " + this.texto + "\n"
+				+ "Destinatario: " + this.destinatario.getEmail() + "\n"
+				+ "Conteudo: " + this.texto + "\n"
 				+ "Data: " + this.data +"\n";
 	}
 }
