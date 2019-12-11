@@ -10,15 +10,18 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
+import modelo.Mensagem;
 import modelo.Prateleira;
 
-public class TelaCadastroPrateleira extends JFrame {
+public class TelaEnviarMensagem extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField emailField;
 	private JLabel lblNome;
 	private JButton btnCriar;
 	private JLabel lblmsg;
+	private JLabel lblTextoMensagem;
+	private JTextField textoMsgField;
 
 	/**
 	 * Launch the application.
@@ -37,38 +40,39 @@ public class TelaCadastroPrateleira extends JFrame {
 //	}
 
 	/**
-	 * Create the frame.
+	 * Create the frame.icon
 	 */
-	public TelaCadastroPrateleira() {
+	public TelaEnviarMensagem() {
 		setTitle("Cadastrar Prateleira");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 259, 139);
+		setBounds(100, 100, 419, 226);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		textField = new JTextField();
-		textField.setBounds(72, 11, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		emailField = new JTextField();
+		emailField.setBounds(129, 14, 255, 21);
+		contentPane.add(emailField);
+		emailField.setColumns(10);
 
-		lblNome = new JLabel("Tamanho");
-		lblNome.setBounds(10, 14, 62, 14);
+		lblNome = new JLabel("Email Dest.");
+		lblNome.setBounds(23, 16, 103, 19);
 		contentPane.add(lblNome);
 
 		btnCriar = new JButton("Cadastrar");
 		btnCriar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					int tamanho = Integer.parseInt(textField.getText());
+
+					String textoMsg = textoMsgField.getText();
+					String email = emailField.getText();
+					Mensagem msg = Fachada.enviarMensagem(email, textoMsg);
 					
-					Prateleira pt = Fachada.cadastrarPrateleira(tamanho);
-					
-					lblmsg.setText("cadastrado id="+pt.getId());
-					textField.setText("");
-					textField.requestFocus();
+					lblmsg.setText("Mensagem id="+msg.getMid());
+					emailField.setText("");
+					emailField.requestFocus();
 				}
 				catch(Exception erro){
 					lblmsg.setText(erro.getMessage());
@@ -76,11 +80,20 @@ public class TelaCadastroPrateleira extends JFrame {
 				}
 			}
 		});
-		btnCriar.setBounds(72, 53, 115, 23);
+		btnCriar.setBounds(142, 127, 115, 23);
 		contentPane.add(btnCriar);
 		
 		lblmsg = new JLabel("");
-		lblmsg.setBounds(10, 86, 233, 14);
+		lblmsg.setBounds(92, 162, 233, 14);
 		contentPane.add(lblmsg);
+
+		lblTextoMensagem = new JLabel("Texto Mensagem");
+		lblTextoMensagem.setBounds(23, 49, 103, 19);
+		contentPane.add(lblTextoMensagem);
+
+		textoMsgField = new JTextField();
+		textoMsgField.setColumns(10);
+		textoMsgField.setBounds(129, 47, 266, 60);
+		contentPane.add(textoMsgField);
 	}
 }

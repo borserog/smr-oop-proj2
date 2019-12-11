@@ -1,14 +1,14 @@
 package aplicacao_swing;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
 import modelo.Pessoa;
 
-public class TelaCadastroUsuario extends JFrame {
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class TelaCadastroAdmin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nomeField;
@@ -18,8 +18,10 @@ public class TelaCadastroUsuario extends JFrame {
 	private JLabel lblmsg;
 	private JPasswordField passwordField;
 	private JTextField emailField;
+	private JLabel lblSetor;
+	private JTextField setorField;
 	private JLabel lblFoto;
-	private JTextField imageField;
+	private JTextField imagemField;
 
 	/**
 	 * Launch the application.
@@ -40,11 +42,11 @@ public class TelaCadastroUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaCadastroUsuario() {
+	public TelaCadastroAdmin() {
 		setTitle("Cadastrar Usuario");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 482, 264);
+		setBounds(100, 100, 519, 287);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -68,11 +70,11 @@ public class TelaCadastroUsuario extends JFrame {
 		contentPane.add(lblPreco);
 
 		lblmsg = new JLabel("");
-		lblmsg.setBounds(85, 185, 273, 14);
+		lblmsg.setBounds(106, 205, 273, 14);
 		contentPane.add(lblmsg);
 
 		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setBounds(10, 84, 46, 14);
+		lblEmail.setBounds(13, 80, 46, 14);
 		contentPane.add(lblEmail);
 
 		emailField = new JTextField();
@@ -90,9 +92,10 @@ public class TelaCadastroUsuario extends JFrame {
 						String nome = nomeField.getText();
 						String senha = new String( passwordField.getPassword());
 						String email = emailField.getText();
-						ImageIcon imagem = new ImageIcon(getClass().getResource(imageField.getText()));
+						String setor = setorField.getText();
+						ImageIcon imagem = new ImageIcon(getClass().getResource(imagemField.getText()));
 
-						Pessoa usuario = Fachada.cadastrarUsuario(nome, senha, email, imagem);
+						Pessoa usuario = Fachada.cadastrarAdministrador(nome, senha, email, imagem, setor);
 						lblmsg.setText("cadastrou: "+usuario.getEmail());
 						nomeField.setText("");
 						passwordField.setText("");
@@ -104,17 +107,26 @@ public class TelaCadastroUsuario extends JFrame {
 				}
 			}
 		});
-		button.setBounds(171, 150, 115, 23);
+		button.setBounds(382, 102, 115, 23);
 		contentPane.add(button);
 		
+		lblSetor = new JLabel("Setor");
+		lblSetor.setBounds(13, 126, 46, 14);
+		contentPane.add(lblSetor);
+		
+		setorField = new JTextField();
+		setorField.setColumns(10);
+		setorField.setBounds(72, 122, 273, 23);
+		contentPane.add(setorField);
+		
 		lblFoto = new JLabel("Foto");
-		lblFoto.setBounds(13, 118, 46, 14);
+		lblFoto.setBounds(13, 164, 46, 14);
 		contentPane.add(lblFoto);
 		
-		imageField = new JTextField();
-		imageField.setColumns(10);
-		imageField.setBounds(75, 110, 273, 23);
-		contentPane.add(imageField);
+		imagemField = new JTextField();
+		imagemField.setColumns(10);
+		imagemField.setBounds(72, 160, 273, 23);
+		contentPane.add(imagemField);
 
 	}
 }

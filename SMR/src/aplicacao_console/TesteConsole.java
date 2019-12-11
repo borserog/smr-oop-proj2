@@ -1,182 +1,171 @@
 package aplicacao_console;
 /**********************************
  * IFPB - Curso Superior de Tec. em Sist. para Internet
- * Programação Orientada a Objetos
- * Prof. Fausto Maranhão Ayres
+ * Programaï¿½ï¿½o Orientada a Objetos
+ * Prof. Fausto Maranhï¿½o Ayres
+ *
+ * Teste do projeto de POO
  **********************************/
 
 
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 import fachada.Fachada;
-import modelo.Prateleira;
-import modelo.Produto;
+import modelo.Administrador;
+import modelo.Mensagem;
 import modelo.Pessoa;
+import repositorio.Repositorio;
 
 public class TesteConsole {
-	public TesteConsole() {
-	}
 
-	public void cadastrar(){
-		try {	
-			Produto p;
-			Prateleira pt;
-			Pessoa usu;
-			usu = Fachada.cadastrarUsuario("joao@ifpb", "123");
-			usu = Fachada.cadastrarUsuario("maria@ifpb", "123");
-			usu = Fachada.login("joao@ifpb", "123");
-			p = Fachada.cadastrarProduto("arroz", 3.0);
-			p = Fachada.cadastrarProduto("feijao", 5.0);
-			p = Fachada.cadastrarProduto("leite", 2.0);
-			p = Fachada.cadastrarProduto("carne", 30.0);
-			p = Fachada.cadastrarProduto("oleo", 10.0);
-			usu = Fachada.logoff("joao@ifpb", "123");
-			
-			usu = Fachada.login("maria@ifpb", "123");
-			pt = Fachada.cadastrarPrateleira(200);
-			pt = Fachada.cadastrarPrateleira(300);
-			pt = Fachada.cadastrarPrateleira(400);	
-			usu = Fachada.logoff("maria@ifpb", "123");
-			
-			System.out.println("cadastro concluido");
+	public void teste1(){
+		System.out.println("================= TESTE 1 ======================");
+		Pessoa p;
+		Mensagem m;
+
+		try {
+			p = Fachada.cadastrarUsuario("joao@ifpb", "123", "joao", null);
+			p = Fachada.cadastrarUsuario("maria@ifpb", "123", "maria", null);
+			p = Fachada.cadastrarUsuario("jose@ifpb", "123", "jose", null);
+			p = Fachada.cadastrarAdministrador("admin@ifpb", "123", "admin1", null, "DTI");
+			System.out.println("\n-------- listar todas pessoas---------");
+			System.out.println(Fachada.listarPessoas(""));
+			System.out.println("-------- listar  pessoas jo---------");
+			System.out.println(Fachada.listarPessoas("jo"));
 		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
+			System.out.println("mensagem de erro==>"+ e.getMessage());
+		}
+
+		try {
+			p = Fachada.login("joao@ifpb", "123");
+			System.out.println("pessoa logada =>" + Fachada.getLogado().getNome());
+			m = Fachada.enviarMensagem("maria@ifpb", "ola maria quanto tempo! saudades");
+			m = Fachada.enviarMensagem("jose@ifpb", "ola jose quanto tempo!");
+			m = Fachada.enviarMensagem("joao@ifpb", "testando pra mim mesmo...");
+					System.out.println("\n-------- caixa de entrada joao---------");
+			imprimirMensagens(Fachada.listarCaixaEntrada());
+			System.out.println("-------- caixa de saida joao---------");
+			imprimirMensagens(Fachada.listarCaixaSaida());
+			Fachada.logoff();
+		}catch (Exception e) {
+			System.out.println("mensagem de erro==>"+ e.getMessage());
+		}
+
+		try {
+			p = Fachada.login("maria@ifpb", "123");
+			System.out.println("pessoa logada =>" + Fachada.getLogado().getNome());
+			m = Fachada.enviarMensagem("joao@ifpb", "oi joao, saudades tb! vamos nos encontar!");
+			m = Fachada.enviarMensagem("joao@ifpb", "que tal um almoco?");
+			m = Fachada.enviarMensagem("joao@ifpb", "vamos chamar jose?");
+			m = Fachada.enviarMensagem("maria@ifpb", "testando pra mim mesmo...");
+			System.out.println("\n-------- caixa de entrada maria---------");
+			imprimirMensagens(Fachada.listarCaixaEntrada());
+			System.out.println("-------- caixa de saida maria---------");
+			imprimirMensagens(Fachada.listarCaixaSaida());
+			m = Fachada.apagarMensagem(6);
+			System.out.println("mensagem excluida =>"+ m.getMid());
+			Fachada.logoff();
+		}catch (Exception e) {
+			System.out.println("mensagem de erro==>"+ e.getMessage());
+		}
+
+		try {
+			p = Fachada.login("admin@ifpb", "123");
+			System.out.println("pessoa logada =>" + Fachada.getLogado().getNome());
+			m = Fachada.enviarMensagem("joao@ifpb", "Benvindo ao sistema!");
+			m = Fachada.enviarMensagem("maria@ifpb", "Benvindo ao sistema!");
+			m = Fachada.enviarMensagem("jose@ifpb", "Benvindo ao sistema!");
+			System.out.println("\n-------- caixa de entrada admin---------");
+			imprimirMensagens(Fachada.listarCaixaEntrada());
+			System.out.println("-------- caixa de saida admin---------");
+			imprimirMensagens(Fachada.listarCaixaSaida());
+			System.out.println("\n\n******* espionando as mensagens do sistema*********");
+			imprimirMensagens(Fachada.espionarMensagens(""));
+			System.out.println("-------- espionando as mensagens do sistema---------");
+			imprimirMensagens(Fachada.espionarMensagens("saudade"));
+			System.out.println("\n-------- RELATORIO 1 - pessoas q nao enviaram mensagens---------");
+			System.out.println(Fachada.relatorio1());
+			System.out.println("\n-------- RELATORIO 2 - mensagens com emitente igual destinatario---------");
+			System.out.println(Fachada.relatorio2());
+			Fachada.logoff();
+		}catch (Exception e) {
+			System.out.println("mensagem de erro==>"+ e.getMessage());
+		}
+		System.out.println("teste1 concluido");
+	}
+	public static void imprimirMensagens(ArrayList<Mensagem> lista) {
+		for(Mensagem msg: lista) {
+			System.out.println(msg);
 		}
 	}
 
-
-	public void atualizar(){
+	public void teste2() {
+		System.out.println("================= TESTE 2 ======================");
+		Pessoa p;
+		Mensagem m ;
 		try{
-			Pessoa usu;
-			usu = Fachada.login("maria@ifpb", "123");
-			Fachada.inserirProdutoPrateleira(1, "arroz");
-			Fachada.inserirProdutoPrateleira(1, "feijao");
-			Fachada.inserirProdutoPrateleira(2, "leite");	
-			Fachada.removerProdutoPrateleira("leite");
-			usu = Fachada.logoff("maria@ifpb", "123");
-			System.out.println("atualizacao concluido");
+			p = Fachada.login("jose@ifpb", "123");
+			m = Fachada.enviarMensagem("jose@ifpb", "");
+			m = Fachada.enviarMensagem("jose@ifpb",
+					"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx"+
+							"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx"+
+							"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx"+
+							"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx"+
+							"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx"+
+							"xxxxxxxx xxxxxxxxxxxxxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx");
+			System.out.println("Falha1 => nao valida texto da mensagem");
 		}catch (Exception e) {
 			System.out.println("==>"+ e.getMessage());
 		}
+
+		try{
+			m = Fachada.apagarMensagem(1);
+			System.out.println("Falha2 => apagar mensagem de outra pessoa");
+		}catch (Exception e) {
+			System.out.println("==>"+ e.getMessage());
+		}
+
+		try{
+			p = Fachada.login("maria@ifpb", "123");
+			System.out.println("Falha3 => login invalido");
+		}catch (Exception e) {
+			System.out.println("==>"+ e.getMessage());
+		}
+
+		System.out.println("teste2 concluido");
 	}
 
-	public  void excluir(){
+	public void teste3(){
+		System.out.println("================= TESTE 3 ======================");
+		Pessoa p;
+		Mensagem m;
+
 		try {
-			Pessoa usu;
-			usu = Fachada.login("maria@ifpb", "123");
-			Fachada.apagarProduto("arroz"); 
-			usu = Fachada.logoff("maria@ifpb", "123");
-			System.out.println("exclusao concluido");
+			ImageIcon icon=null;
+//          icon = new ImageIcon(getClass.getResource("/imagens/pessoa.jpg"));
+			icon = new ImageIcon(getClass().getResource("/pessoa.jpg"));
+//          icon = new ImageIcon("c:/pessoa.jpg"));
+			p = Fachada.cadastrarUsuario("ana@ifpb", "123", "ana", icon);
 		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
+			System.out.println("mensagem de erro==>"+ e.getMessage());
 		}
-		//-----------------------------	
-	}
-
-	public void listar(){
-		String texto;
-		ArrayList<Produto> lista1 = Fachada.listarProdutos();
-		texto = "\nListagem de produtos: \n";
-		if (lista1.isEmpty())
-			texto += "não tem produto cadastrado\n";
-		else 	
-			for(Produto p: lista1) 
-				texto +=  p + "\n"; 
-		System.out.println(texto);
-
-
-		ArrayList<Prateleira> lista2 = Fachada.listarPrateleiras();
-		texto = "Listagem de prateleiras: \n";
-		if (lista2.isEmpty())
-			texto += "não tem prateleira cadastrada\n";
-		else 
-			for(Prateleira p: lista2) 
-				texto +=  p + "\n"; 
-		System.out.println(texto);
-	}
-
-	public void relatorio(){
-		ArrayList<Prateleira> lista = Fachada.consultarPrateleirasVazias();
-		String texto = "Prateleiras vazias: \n";
-		if (lista.isEmpty())
-			texto += "não tem prateleira vazia\n";
-		else 	
-			for(Prateleira p: lista) 
-				texto +=  "id="+ p.getId() + "\n"; 					
-		System.out.println(texto);
-
-
-
-		ArrayList<Prateleira> lista2 = Fachada.consultarPrateleiras3Produtos();
-		texto = "Prateleiras com 3 produtos: \n";
-		if (lista2.isEmpty())
-			texto += "não tem prateleira\n";
-		else 	
-			for(Prateleira p: lista2) 
-				texto +=  "id="+ p.getId() + "\n"; 					
-		System.out.println(texto);
-
-
-
-		ArrayList<Produto> produtos = Fachada.consultarProdutosSemPrateleira();
-		System.out.println("Listagem de produtos sem prateleira");
-		for(Produto p: produtos)
-			System.out.println(p.getNome());
+		System.out.println("teste3 concluido");
 	}
 
 
-	public void testarExcecoes() {
-		Pessoa usu;
 
-		try {
-			usu = Fachada.login("joao@ifpb", "123");
-			Produto p;
-			p = Fachada.cadastrarProduto("ovo", 10.0); //exceção
-			p = Fachada.cadastrarProduto("ovo", 10.0); //exceção
-			System.out.println("teste cadastrar produto falhou");
-		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
-		}
-		try {
-			Produto p;
-			p = Fachada.cadastrarProduto("banana", 1.0);
-			Fachada.inserirProdutoPrateleira(2, "banana");	
-			Fachada.inserirProdutoPrateleira(2, "banana");	//exceção
-			System.out.println("teste inserir produto falhou");
-		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
-		}
-		try {
-			Produto p;
-			p = Fachada.cadastrarProduto("cerveja", 5.0); 
-			Fachada.inserirProdutoPrateleira(2, "cerveja");	
-			Fachada.removerProdutoPrateleira("cerveja");	
-			Fachada.removerProdutoPrateleira("cerveja");	//exceção
-			System.out.println("teste remover produto falhou");
-		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
-		}
-		try {
-			Produto p;
-			p = Fachada.cadastrarProduto("guarana", 5.0); 
-			Fachada.apagarProduto("guarana");	
-			Fachada.apagarProduto("guarana");	//exceção
-			System.out.println("teste apagar produto falhou");
-		}catch (Exception e) {
-			System.out.println("==>"+ e.getMessage());
-		}
-	}
+
+
 	//  ***********************************************
-	public static void main (String[] args)   
+	public static void main (String[] args)
 	//  ***********************************************
 	{
-		TesteConsole teste = new TesteConsole();
-		teste.cadastrar();
-		teste.atualizar();
-		teste.excluir();
-		teste.listar();
-		//teste.relatorio();
-		//teste.testarExcecoes();
+		TesteConsole testeconsole = new TesteConsole();
+		testeconsole.teste1();
+		testeconsole.teste2();
+		testeconsole.teste3();
 	}
 
 }

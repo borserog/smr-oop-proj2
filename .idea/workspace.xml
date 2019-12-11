@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f38829c7-7215-41a9-9a4f-7e8b2646e227" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_console/AplicacaoConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_console/AplicacaoConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_console/MeuTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_console/MeuTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_console/TesteConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_console/TesteConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroProduto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEspionar.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEspionar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaProdutoPrateleira.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/fachada/Fachada.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/fachada/Fachada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/modelo/Mensagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/modelo/Mensagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMR/src/modelo/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/SMR/src/modelo/Pessoa.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/SMR/bin/" />
+    <ignored path="$PROJECT_DIR$/bin/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5347945">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_console/AplicacaoConsole.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-4146">
+                  <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_console/TesteConsole.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/SMR/src/fachada/Fachada.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ArrayList</find>
+      <find>TelaPrincipal2</find>
+      <find>logoff</find>
+      <find>TelaListagem</find>
+      <find>cadastrarPessoa</find>
+      <find>cadastrarAdministador</find>
+      <find>cadastrarAdmin</find>
+      <find>obterLogada</find>
+      <find>obterLogado</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>List</replace>
+      <replace>TelaPrincipal</replace>
+      <replace>cadastrarAdmin</replace>
+      <replace>cadastrarAdministrador</replace>
+      <replace>obterLogado</replace>
+      <replace>getLogado</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroProduto.java" />
+        <option value="$PROJECT_DIR$/SMR/src/repositorio/Repositorio.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroPrateleira.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal1.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEnviarMensagem.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaListagemSaida.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaListagemEntrada.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaApagarMensagem.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEspionarMensagens.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaListagem.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaConsulta.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroAdmin.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroUsuario.java" />
+        <option value="$PROJECT_DIR$/SMR/src/modelo/Administrador.java" />
+        <option value="$PROJECT_DIR$/SMR/src/modelo/Pessoa.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_console/MeuTeste.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_console/TesteConsole.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaLogin.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEspionar.java" />
+        <option value="$PROJECT_DIR$/SMR/src/fachada/Fachada.java" />
+        <option value="$PROJECT_DIR$/SMR/src/aplicacao_console/AplicacaoConsole.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1366" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aplicacao_console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="aplicacao_swing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fachada" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="smr-oop-proj2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smr-oop-proj2" type="462c0819:PsiDirectoryNode" />
+              <item name="SMR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="imagens" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroUsuario.java" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroUsuario.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="aplicacao_swing" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MeuTeste">
+    <configuration name="MeuTeste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aplicacao_console.MeuTeste" />
+      <module name="SMR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aplicacao_console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TelaPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="aplicacao_swing.TelaPrincipal" />
+      <module name="SMR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aplicacao_swing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MeuTeste" />
+        <item itemvalue="Application.TelaPrincipal" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f38829c7-7215-41a9-9a4f-7e8b2646e227" name="Default Changelist" comment="" />
+      <created>1576017613849</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576017613849</updated>
+      <workItem from="1576017627477" duration="5502000" />
+      <workItem from="1576024309312" duration="10002000" />
+      <workItem from="1576072790467" duration="5507000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21011000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1415" y="0" width="1871" height="1080" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17534247" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32810867" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32984293" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17534247" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32879582" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32984293" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/smr-oop-proj2.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/dev/programas/jdk1.8.0_151/src.zip!/java/util/TreeMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="276" column="13" selection-start-line="276" selection-start-column="13" selection-end-line="276" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/modelo/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroProduto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="83" column="71" lean-forward="true" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroPrateleira.java" />
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaListagemSaida.java" />
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEnviarMensagem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="70" column="75" selection-start-line="70" selection-start-column="75" selection-end-line="70" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaListagem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <folding>
+            <element signature="e#3103#3111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="171" column="33" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaConsulta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="93" column="40" lean-forward="true" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="95" selection-start-line="95" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaApagarMensagem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="72" column="29" lean-forward="true" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/modelo/Administrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/repositorio/Repositorio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/modelo/Pessoa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1167#1168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_console/MeuTeste.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="89" lean-forward="true" selection-start-line="27" selection-start-column="89" selection-end-line="27" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/modelo/Mensagem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-130">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaProdutoPrateleira.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1430">
+          <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="180" column="58" lean-forward="true" selection-start-line="180" selection-start-column="58" selection-end-line="180" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaCadastroUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-799">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_swing/TelaEspionar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_console/TesteConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/fachada/Fachada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="191" column="55" selection-start-line="191" selection-start-column="55" selection-end-line="191" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMR/src/aplicacao_console/AplicacaoConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4146">
+          <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

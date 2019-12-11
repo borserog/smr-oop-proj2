@@ -7,13 +7,7 @@ package aplicacao_swing;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
@@ -38,7 +32,7 @@ public class TelaLogin extends JFrame {
 	//		EventQueue.invokeLater(new Runnable() {
 	//			public void run() {
 	//				try {
-	//					TelaApagarProduto window = new TelaApagarProduto();
+	//					TelaApagarMensagem window = new TelaApagarMensagem();
 	//					window.setVisible(true);
 	//				} catch (Exception e) {
 	//					e.printStackTrace();
@@ -92,6 +86,7 @@ public class TelaLogin extends JFrame {
 					String email = textField.getText();
 					String senha = new String( passwordField.getPassword() );
 					Pessoa usuario = Fachada.login(email,senha);
+
 					if (usuario!=null)
 						label_2.setText("bemvindo: "+usuario.getEmail());
 					else
@@ -118,13 +113,7 @@ public class TelaLogin extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					String nome = textField.getText();
-					String senha = new String( passwordField.getPassword() );
-					Pessoa usuario = Fachada.logoff(nome,senha);
-					if (usuario!=null)
-						label_2.setText("Tchau: "+usuario.getEmail());
-					else
-						label_2.setText("tente novamente ");
+					Fachada.logoff();
 				} catch (Exception e) {
 					label_2.setText(e.getMessage());
 				}
