@@ -16,12 +16,13 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
+import modelo.Mensagem;
 import modelo.Produto;
 
-public class TelaApagarProduto extends JFrame {
+public class TelaApagarMensagem extends JFrame {
 	private JPanel contentPane;
 	private JLabel lblNome;
-	private JTextField textField;
+	private JTextField idMsg;
 	private JButton btnApagar;
 	private DefaultListModel<String> model = new DefaultListModel<String>();	
 	private JLabel lblmsg;
@@ -34,7 +35,7 @@ public class TelaApagarProduto extends JFrame {
 //		EventQueue.invokeLater(new Runnable() {
 //			public void run() {
 //				try {
-//					TelaApagarProduto window = new TelaApagarProduto();
+//					TelaApagarMensagem window = new TelaApagarMensagem();
 //					window.setVisible(true);
 //				} catch (Exception e) {
 //					e.printStackTrace();
@@ -46,7 +47,7 @@ public class TelaApagarProduto extends JFrame {
 	/**
 	 * Create the application.
 	 */
-	public TelaApagarProduto() {
+	public TelaApagarMensagem() {
 		initialize();
 	}
 
@@ -63,20 +64,22 @@ public class TelaApagarProduto extends JFrame {
 		contentPane.setLayout(null);
 		
 
-		lblNome = new JLabel("Nome do Produto");
-		lblNome.setBounds(19, 28, 102, 14);
+		lblNome = new JLabel("ID da Mensagem");
+		lblNome.setBounds(12, 28, 143, 19);
 		contentPane.add(this.lblNome);
-		textField = new JTextField();
-		textField.setBounds(124, 25, 86, 20);
-		contentPane.add(this.textField);
-		textField.setColumns(10);
+		idMsg = new JTextField();
+		idMsg.setBounds(143, 26, 170, 21);
+		contentPane.add(this.idMsg);
+		idMsg.setColumns(10);
 		btnApagar = new JButton("Apagar");
 		btnApagar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					String nome = textField.getText();
-					Produto p = Fachada.apagarProduto(nome);		// falta fazer
-					lblmsg.setText("produto excluido com sucesso "+p.getNome());
+
+					int idMsgText = Integer.parseInt(idMsg.getText());
+					Mensagem mensagem = Fachada.apagarMensagem(idMsgText);
+					lblmsg.setText("Produto excluido com sucesso "+mensagem.getMid());
+
 				} catch (Exception e) {
 					lblmsg.setText(e.getMessage());
 				}
@@ -90,8 +93,8 @@ public class TelaApagarProduto extends JFrame {
 		btnLimpar = new JButton("Limpar");
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textField.setText("");
-				textField.requestFocus();
+				idMsg.setText("");
+				idMsg.requestFocus();
 			}
 		});
 		btnLimpar.setBounds(172, 71, 141, 23);

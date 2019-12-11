@@ -13,6 +13,8 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 
 import fachada.Fachada;
+import modelo.Mensagem;
+import modelo.Pessoa;
 import modelo.Prateleira;
 import modelo.Produto;
 
@@ -22,7 +24,6 @@ public class TelaConsulta extends JFrame {
 	private JTextArea textArea;
 	private JButton btnConsulta_1;
 	private JButton btnConsulta_2;
-	private JButton btnConsulta_3;
 
 	/**
 	 * Launch the application.
@@ -53,17 +54,17 @@ public class TelaConsulta extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		btnConsulta_1 = new JButton("Prateleiras Vazias");
+		btnConsulta_1 = new JButton("RelatÃ³rio 1");
 		btnConsulta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
 					String texto;
-					ArrayList<Prateleira> lista1 = Fachada.consultarPrateleirasVazias();
+					ArrayList<Pessoa> lista1 = Fachada.relatorio1();
 					texto = "Listagem de prateleiras vazias: \n";
 					if (lista1.isEmpty())
-						texto += "não existe";
+						texto += "nï¿½o existe";
 					else 	
-						for(Prateleira p: lista1) 
+						for(Pessoa p: lista1)
 							texto +=  p + "\n"; 
 
 					textArea.setText(texto);
@@ -73,59 +74,37 @@ public class TelaConsulta extends JFrame {
 				}
 			}
 		});
-		btnConsulta_1.setBounds(414, 13, 271, 23);
+		btnConsulta_1.setBounds(414, 81, 271, 23);
 		contentPane.add(btnConsulta_1);
 
 		textArea = new JTextArea();
 		JScrollPane scroll = new JScrollPane(textArea);
-		scroll.setBounds(24, 11, 348, 228);
+		scroll.setBounds(24, 11, 378, 236);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scroll);
 
-		btnConsulta_2 = new JButton("Produtos sem Prateleira");
+		btnConsulta_2 = new JButton("RelatÃ³rio 2");
 		btnConsulta_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String texto;
-				ArrayList<Produto> lista1 = Fachada.consultarProdutosSemPrateleira();
+				ArrayList<Mensagem> lista1 = null;
+				try {
+					lista1 = Fachada.relatorio2();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
 				texto = "Listagem de produtos sem prateleira: \n";
 				if (lista1.isEmpty())
-					texto += "não tem\n";
+					texto += "nï¿½o tem\n";
 				else 	
-					for(Produto p: lista1) 
-						texto +=  p + "\n"; 
+					for(Mensagem m: lista1)
+						texto +=  m + "\n";
 
 				textArea.setText(texto);
 			}
 		});
-		btnConsulta_2.setBounds(414, 47, 271, 23);
+		btnConsulta_2.setBounds(414, 133, 271, 23);
 		contentPane.add(btnConsulta_2);
-		
-		btnConsulta_3 = new JButton("Produtos da mesma prateleira do (nome)");
-		btnConsulta_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = JOptionPane.showInputDialog("nome do produto");
-				textArea.setText("nao implementada");
-			}
-		});
-		btnConsulta_3.setBounds(414, 81, 271, 23);
-		contentPane.add(btnConsulta_3);
-		
-		JButton btnPrateleirasCom = new JButton("Prateleiras com 3 produtos");
-		btnPrateleirasCom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ArrayList<Prateleira> resultado = Fachada.consultarPrateleiras3Produtos();
-				String texto = "Listagem de prateleiras com 3 produtos: \n";
-				if (resultado.isEmpty())
-					texto += "não existe";
-				else 	
-					for(Prateleira p: resultado) 
-						texto +=  p + "\n"; 
-
-				textArea.setText(texto);
-			}
-		});
-		btnPrateleirasCom.setBounds(414, 146, 271, 23);
-		contentPane.add(btnPrateleirasCom);
 	}
 }

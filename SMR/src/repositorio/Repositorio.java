@@ -27,7 +27,13 @@ public class Repositorio {
 	}
 
 	public Pessoa localizarUsuario(String email){
-		return pessoas.get(email);
+		String chave = null;
+		for (String p : pessoas.keySet()) {
+			if (p.contains(email))
+				 chave = p;
+				
+		}
+		return pessoas.get(chave);
 	}
 
 		

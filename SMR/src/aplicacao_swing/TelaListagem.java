@@ -1,22 +1,16 @@
 package aplicacao_swing;
+
+import fachada.Fachada;
+import modelo.Mensagem;
+import modelo.Pessoa;
+import modelo.Prateleira;
+import modelo.Produto;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.border.EmptyBorder;
-
-import fachada.Fachada;
-import modelo.Prateleira;
-import modelo.Produto;
-import modelo.Pessoa;
 
 public class TelaListagem extends JFrame {
 
@@ -25,6 +19,8 @@ public class TelaListagem extends JFrame {
 	private JButton button1;
 	private JButton button2;
 	private JButton button;
+	private JLabel lblBuscaUsurioPor;
+	private JTextField palavraChaveField;
 
 	/**
 	 * Launch the application.
@@ -33,7 +29,7 @@ public class TelaListagem extends JFrame {
 //		EventQueue.invokeLater(new Runnable() {
 //			public void run() {
 //				try {
-//					TelaListagem frame = new TelaListagem();
+//					TelaListagemSaida frame = new TelaListagemSaida();
 //					frame.setVisible(true);
 //				} catch (Exception e) {
 //					e.printStackTrace();
@@ -50,24 +46,24 @@ public class TelaListagem extends JFrame {
 		setTitle("Listagem");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 550, 242);		
+		setBounds(100, 100, 727, 354);		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		button1 = new JButton("Listar Prateleira");
+		button1 = new JButton("Listar Caixa de Entrada");
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-					ArrayList<Prateleira> lista = Fachada.listarPrateleiras();
+					ArrayList<Mensagem> lista = Fachada.listarCaixaEntrada();
 					
-					String texto = "Listagem de prateleiras: \n";
+					String texto = "Listagem da caixa de entrada: \n";
 					if (lista.isEmpty())
-						texto += "não tem prateleira cadastrada\n";
+						texto += "nï¿½o tem prateleira cadastrada\n";
 					else 
-						for(Prateleira p: lista) 
-							texto +=  p + "\n"; 
+						for(Mensagem mensagem: lista)
+							texto +=  mensagem + "\n";
 
 					textArea.setText(texto);
 				}
@@ -76,29 +72,29 @@ public class TelaListagem extends JFrame {
 				}
 			}
 		});
-		button1.setBounds(63, 180, 115, 23);
+		button1.setBounds(34, 208, 205, 23);
 		contentPane.add(button1);
 		
 		textArea = new JTextArea();		
 		JScrollPane scroll = new JScrollPane(textArea);
-		scroll.setBounds(24, 29, 510, 140);
+		scroll.setBounds(24, 29, 678, 167);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scroll);
 		
-		button2 = new JButton("Listar Produto");
+		button2 = new JButton("Listar Caixa de SaÃ­da");
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					String texto;
-					ArrayList<Produto> lista = Fachada.listarProdutos();
+					ArrayList<Mensagem> lista = Fachada.listarCaixaSaida();
 					
-					texto = "Listagem de produtos: \n";
+					texto = "Listagem da caixa de saÃ­da: \n";
 					if (lista.isEmpty())
-						texto += "não tem produto cadastrado\n";
+						texto += "nï¿½o tem produto cadastrado\n";
 					else 	
-						for(Produto p: lista) 
-							texto +=  p + "\n"; 
+						for(Mensagem mensagem: lista)
+							texto +=  mensagem + "\n";
 
 					textArea.setText(texto);
 				}
@@ -107,18 +103,29 @@ public class TelaListagem extends JFrame {
 				}
 			}
 		});
-		button2.setBounds(220, 180, 115, 23);
+		button2.setBounds(260, 208, 197, 23);
 		contentPane.add(button2);
 		
 		button = new JButton("Listar Usuario");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String texto;
-				ArrayList<Pessoa> lista = Fachada.listarUsuarios();
+				ArrayList<Pessoa> lista = new ArrayList<Pessoa>();
+
+				if (palavraChaveField.getText().isEmpty())
+					lista=Fachada.listarPessoas();
+
+				else {
+					try {
+						lista=Fachada.listarPessoas(palavraChaveField.getText());
+					} catch (Exception erro) {
+						JOptionPane.showMessageDialog(null,erro.getMessage());
+					}
+				}
 				
 				texto = "Listagem de usuarios: \n";
 				if (lista.isEmpty())
-					texto += "não tem usuario cadastrado\n";
+					texto += "nï¿½o tem usuario cadastrado\n";
 				else 	
 					for(Pessoa p: lista) 
 						texto +=  p + "\n"; 
@@ -126,7 +133,16 @@ public class TelaListagem extends JFrame {
 				textArea.setText(texto);
 			}
 		});
-		button.setBounds(364, 180, 115, 23);
+		button.setBounds(488, 208, 138, 23);
 		contentPane.add(button);
+		
+		lblBuscaUsurioPor = new JLabel("Busca UsuÃ¡rio por Palavra chave:");
+		lblBuscaUsurioPor.setBounds(37, 267, 232, 15);
+		contentPane.add(lblBuscaUsurioPor);
+		
+		palavraChaveField = new JTextField();
+		palavraChaveField.setColumns(10);
+		palavraChaveField.setBounds(287, 257, 310, 35);
+		contentPane.add(palavraChaveField);
 	}
 }

@@ -79,7 +79,7 @@ public class TelaCadastroProduto extends JFrame {
 						String nome = textField.getText();
 						double preco = Double.parseDouble(textField_1.getText());
 						
-						Produto p = Fachada.cadastrarProduto(nome, preco);
+						Produto p = Fachada.cadastrarUsuario(, preco);
 						
 						lblmsg.setText("cadastrado nome="+p.getNome());
 						textField.setText("");
