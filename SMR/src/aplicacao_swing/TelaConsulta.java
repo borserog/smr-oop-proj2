@@ -54,7 +54,7 @@ public class TelaConsulta extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		btnConsulta_1 = new JButton("RelatÃ³rio 1");
+		btnConsulta_1 = new JButton("Relatório 1");
 		btnConsulta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
@@ -62,7 +62,7 @@ public class TelaConsulta extends JFrame {
 					ArrayList<Pessoa> lista1 = Fachada.relatorio1();
 					texto = "Listagem de prateleiras vazias: \n";
 					if (lista1.isEmpty())
-						texto += "nï¿½o existe";
+						texto += "não existe";
 					else 	
 						for(Pessoa p: lista1)
 							texto +=  p + "\n"; 
@@ -84,7 +84,7 @@ public class TelaConsulta extends JFrame {
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scroll);
 
-		btnConsulta_2 = new JButton("RelatÃ³rio 2");
+		btnConsulta_2 = new JButton("Relatório 2");
 		btnConsulta_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String texto;
@@ -96,7 +96,7 @@ public class TelaConsulta extends JFrame {
 				}
 				texto = "Listagem de produtos sem prateleira: \n";
 				if (lista1.isEmpty())
-					texto += "nï¿½o tem\n";
+					texto += "não existe\n";
 				else 	
 					for(Mensagem m: lista1)
 						texto +=  m + "\n";

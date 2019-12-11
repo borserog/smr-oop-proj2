@@ -60,7 +60,7 @@ public class TelaListagem extends JFrame {
 					
 					String texto = "Listagem da caixa de entrada: \n";
 					if (lista.isEmpty())
-						texto += "n�o tem prateleira cadastrada\n";
+						texto += "Nao tem mensagem cadastrada\n";
 					else 
 						for(Mensagem mensagem: lista)
 							texto +=  mensagem + "\n";
@@ -82,16 +82,16 @@ public class TelaListagem extends JFrame {
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scroll);
 		
-		button2 = new JButton("Listar Caixa de Saída");
+		button2 = new JButton("Listar Caixa de Saida");
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					String texto;
 					ArrayList<Mensagem> lista = Fachada.listarCaixaSaida();
 					
-					texto = "Listagem da caixa de saída: \n";
+					texto = "Listagem da caixa de saida: \n";
 					if (lista.isEmpty())
-						texto += "n�o tem produto cadastrado\n";
+						texto += "nao tem mensagem cadastrada\n";
 					else 	
 						for(Mensagem mensagem: lista)
 							texto +=  mensagem + "\n";
@@ -125,7 +125,7 @@ public class TelaListagem extends JFrame {
 				
 				texto = "Listagem de usuarios: \n";
 				if (lista.isEmpty())
-					texto += "n�o tem usuario cadastrado\n";
+					texto += "nao tem usuario cadastrado\n";
 				else 	
 					for(Pessoa p: lista) 
 						texto +=  p + "\n"; 
@@ -136,7 +136,7 @@ public class TelaListagem extends JFrame {
 		button.setBounds(488, 208, 138, 23);
 		contentPane.add(button);
 		
-		lblBuscaUsurioPor = new JLabel("Busca Usuário por Palavra chave:");
+		lblBuscaUsurioPor = new JLabel("Buscar usuario por Palavra chave:");
 		lblBuscaUsurioPor.setBounds(37, 267, 232, 15);
 		contentPane.add(lblBuscaUsurioPor);
 		

@@ -43,7 +43,7 @@ public class TelaEnviarMensagem extends JFrame {
 	 * Create the frame.icon
 	 */
 	public TelaEnviarMensagem() {
-		setTitle("Cadastrar Prateleira");
+		setTitle("Cadastrar Mensagem");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 419, 226);
