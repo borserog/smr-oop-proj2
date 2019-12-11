@@ -47,7 +47,7 @@ public class Pessoa {
 	}
 	
 	public String getNome() {
-		return senha;
+		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;

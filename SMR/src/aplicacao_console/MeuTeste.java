@@ -25,26 +25,33 @@ public class MeuTeste {
 
 				Fachada.enviarMensagem(p3.getEmail(), "N�o fala que ele � corno!");
 				
-				System.out.println("______________________CAIXAS DE MENSAGENS_______________________________");
-				System.out.println();	
+				System.out.println("_______________ LISTAGEM PESSOAS _______________\n");
+				System.out.println("******** TODAS ********\n");
+				System.out.println(Fachada.listarPessoas());
+
+				System.out.println("******** BUSCANDO ********\n");
+				System.out.println(Fachada.listarPessoas("Gerson"));
+
+				System.out.println("_______________ CAIXAS_DE_MENSAGENS _______________\n");
+
+				System.out.println("******** ENTRADA ********\n");
+				System.out.println(admin.getMensagensEntrada());
+
+				System.out.println("******** SAÍDA ********\n");
+				System.out.println(admin.getMensagensSaida());
 				
-				System.out.println("___________________________ENTRADA______________________________________");
-				System.out.println(p1.getMensagensEntrada());
-				System.out.println("___________________________SAÍDA______________________________________");
-				System.out.println(p2.getMensagensSaida());
-				
-				System.out.println("___________________________ADMIN VIEW__________________________");
-				System.out.println();	
-				
-				System.out.println("******** MENSAGENS DO SISTEMA ********");	
-				Fachada.espionarMensagens();
-				System.out.println("___________________________________________");
-				Fachada.espionarMensagens("corno");
-				System.out.println();	
-				System.out.println("******** TOTAL DE MENSAGENS ********");	
-				System.out.println(Fachada.relatorio1());
-				System.out.println("___________________________________________");
-				System.out.println(Fachada.relatorio2());
+				System.out.println("_______________ ADMIN VIEW _______________\n");
+
+//				System.out.println("******** ESPIANDO MENSAGENS ********\n");
+//				Fachada.espionarMensagens();
+
+				System.out.println("******** BUSCA EMAIL POR PALAVRA CHAVE ********\n");
+				Fachada.espionarMensagens("cor");
+//
+//				System.out.println("******** TOTAL DE MENSAGENS ********\n");
+//				System.out.println(Fachada.relatorio1());
+//				System.out.println("******** PESSOAS QUE NÃO TEM MENSAGEM NA CAIXA DE ENTRADA ********\n");
+//				System.out.println(Fachada.relatorio2());
 
 			} catch(Exception e) {
 				e.printStackTrace();

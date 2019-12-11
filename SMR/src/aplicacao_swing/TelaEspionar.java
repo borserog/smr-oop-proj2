@@ -2,8 +2,6 @@ package aplicacao_swing;
 
 import fachada.Fachada;
 import modelo.Mensagem;
-import modelo.Pessoa;
-import sun.text.resources.ar.FormatData_ar_JO;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -71,11 +69,9 @@ public class TelaEspionar extends JFrame {
 						lista=Fachada.espionarMensagens(palavraChaveField.getText());
 					
 					texto = "Listagem da Espionagem: \n";
-					if (lista.isEmpty())
-						texto += "n�o tem produto cadastrado\n";
-					else 	
-						for(Mensagem mensagem: lista)
-							texto +=  mensagem + "\n";
+					
+					for(Mensagem mensagem: lista)
+						texto +=  mensagem + "\n";
 
 					textArea.setText(texto);
 				}

@@ -190,7 +190,7 @@ public class TelaPrincipal {
         itemLogff.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    Fachada.logoff("","");
+                    Fachada.logoff();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

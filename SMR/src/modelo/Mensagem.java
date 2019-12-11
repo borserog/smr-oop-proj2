@@ -62,11 +62,11 @@ public class Mensagem {
 	
 	@Override
 	public String toString() {
-		return "MENSAGEM:\n"
+		return "\nMENSAGEM:\n"
 				+ "Id: " + this.mId + "\n"
 				+ "Enviado por: " + this.emitente.getEmail() + "\n"
-				+ "Destinatário: " + this.destinatario.getEmail() + "\n"
-				+ "Conteúdo: " + this.texto + "\n"
-				+ "Data: " + this.data;
+				+ "Destinatï¿½rio: " + this.destinatario.getEmail() + "\n"
+				+ "Conteï¿½do: " + this.texto + "\n"
+				+ "Data: " + this.data +"\n";
 	}
 }

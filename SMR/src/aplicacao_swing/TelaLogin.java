@@ -113,10 +113,7 @@ public class TelaLogin extends JFrame {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-					String nome = textField.getText();
-					String senha = new String( passwordField.getPassword());
-					Fachada.logoff(nome,senha);
-
+					Fachada.logoff();
 				} catch (Exception e) {
 					label_2.setText(e.getMessage());
 				}
