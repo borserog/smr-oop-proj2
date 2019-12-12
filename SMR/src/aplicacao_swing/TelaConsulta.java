@@ -60,7 +60,7 @@ public class TelaConsulta extends JFrame {
 				try{
 					String texto;
 					ArrayList<Pessoa> lista1 = Fachada.relatorio1();
-					texto = "Listagem de prateleiras vazias: \n";
+					texto = "Listagem de usuários sem mensagens: \n";
 					if (lista1.isEmpty())
 						texto += "não existe";
 					else 	
@@ -94,7 +94,7 @@ public class TelaConsulta extends JFrame {
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}
-				texto = "Listagem de produtos sem prateleira: \n";
+				texto = "Listagem de mensagens com mesmo destinatário e remetente: \n";
 				if (lista1.isEmpty())
 					texto += "não existe\n";
 				else 	

@@ -1,13 +1,17 @@
 package modelo;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Mensagem {
 	private int mId;
 	private Pessoa emitente;
 	private Pessoa destinatario;
 	private String texto;
-	private LocalDateTime data;
+	private String data;
 	private int TEXTO_MAX = 200;
+	String padrao = "dd/MM/yy hh:mm:ss";
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(padrao);
 	
 	public Mensagem(
 			int mId,
@@ -24,8 +28,10 @@ public class Mensagem {
 			throw new Exception("Texto ultrapassa o limite de caracteres");
 		}
 		this.texto = texto;
-		this.data = LocalDateTime.now();
+		
 
+
+		this.data = simpleDateFormat.format(new Date());
 	}
 	
 	// TODO getter methods
@@ -56,7 +62,7 @@ public class Mensagem {
 	}
 	
 	
-	public LocalDateTime getData() {
+	public String getData() {
 		return this.data;
 	}
 	

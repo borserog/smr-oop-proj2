@@ -28,10 +28,10 @@ public class AplicacaoConsole {
 		processarMenu();
 	}
 
-	public  void processarMenu() {
+	public void processarMenu() {
 		String entrada;
 		int opcao;
-		System.out.println("\n\n <-- Iniciando execuÃ§Ã£o do Sistema --> ");
+		System.out.println("\n\n <-- Iniciando execução do Sistema --> ");
 		do {
 			exibirMenu();
 			try{
@@ -51,11 +51,11 @@ public class AplicacaoConsole {
 				case 10: espionarMensagens();					break;
 				case 11: relatorio1();							break;
 				case 12: relatorio2();							break;
-				default: System.out.println("Opï¿½ï¿½o Invalida !! \n");
+				default: System.out.println("Opção Inválida !! \n");
 				}
 			}
 			catch(NumberFormatException e)	{
-				System.out.println("Digite somente nï¿½mero! \n");
+				System.out.println("Digite somente números! \n");
 				opcao=-1;
 			}
 			catch(Exception e)	{
@@ -63,26 +63,26 @@ public class AplicacaoConsole {
 				opcao=-1;
 			}		
 		}while (opcao != 0);
-		System.out.println("\n <-- Atï¿½ Breve -->");
+		System.out.println("\n <-- Até Breve -->");
 	}
 
 	public void exibirMenu() {
 		System.out.println("\n\n| - - - - - - - - -  Menu  - - - - - - - - - - - |");
 		System.out.println("|  [0]- Sair                                     |");
-		System.out.println("|  [1]- Cadastrar usuÃ¡rio                        |");
+		System.out.println("|  [1]- Cadastrar usuário                        |");
 		System.out.println("|  [2]- Cadastrar Administrador                  |");
 		System.out.println("|  [3]- Login						             |");
 		System.out.println("|  [4]- Buscar por Pessoas                       |");
 		System.out.println("|  [5]- Listar Pessoas                           |");
 		System.out.println("|  [6]- Listar Caixa de Entrada                  |");
-		System.out.println("|  [7]- Listar Caixa de SaÃ­da                    |");
+		System.out.println("|  [7]- Listar Caixa de Saída                    |");
 		System.out.println("|  [8]- Apagar Mensagem                          |");
 		System.out.println("|  [9]- Buscar por Mensagem (espionando          |");
 		System.out.println("|  [10]- Espionar Mensagens                      |");
-		System.out.println("|  [11]- RelatÃ³rio 1 							 |");
-		System.out.println("|  [12]- RelatÃ³rio 2                      		 |");
+		System.out.println("|  [11]- Relatório 1 							 |");
+		System.out.println("|  [12]- Relatório 2                      		 |");
 		System.out.println("| - - - - - - - - - - - - - - - - - - - - - - - -|");
-		System.out.print("  Opï¿½ï¿½o :");
+		System.out.print("  Opção : ");
 	}
 
 
@@ -94,29 +94,20 @@ public class AplicacaoConsole {
 		String email;
 		String senha;
 
-		System.out.println("\n---CADASTRO DE USUARIO---");
-
 		System.out.print("Nome do Usuario(ou ENTER para voltar):");
 		nome = teclado.nextLine();
 		System.out.print("Email do Usuario(ou ENTER para voltar):");
 		email = teclado.nextLine();
 		System.out.print("Senha do Usuario(ou ENTER para voltar):");
 		senha = teclado.nextLine();
+		System.out.println("\n---CADASTRO DE USUARIO---");
 
-		while (!nome.equals("")) {
-			try{
-				p = Fachada.cadastrarUsuario(nome, senha, email) ;
-				System.out.println("--> cadastrado com sucesso ! --> " + p.getNome() +"\n");
-			}
-			catch(Exception e){
-				System.out.println("-->" + e.getMessage());
-			}
-			System.out.print("Nome do Produto(ou ENTER para voltar):");
-			nome = teclado.nextLine();
-			System.out.print("Email do Usuario(ou ENTER para voltar):");
-			email = teclado.nextLine();
-			System.out.print("Senha do Usuario(ou ENTER para voltar):");
-			senha = teclado.nextLine();
+		try{
+			p = Fachada.cadastrarUsuario(email, senha, nome) ;
+			System.out.println("--> cadastrado com sucesso ! --> " + p.getNome() +"\n");
+		}
+		catch(Exception e){
+			System.out.println("-->" + e.getMessage());
 		}
 	}
 

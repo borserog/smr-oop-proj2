@@ -1,6 +1,9 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.swing.ImageIcon;
 
 public class Pessoa {
@@ -8,6 +11,10 @@ public class Pessoa {
 	private String senha;
 	private String nome;
 	private ImageIcon imagem;
+	String regex = "^(.+)@(.+)$";
+	 
+	Pattern pattern = Pattern.compile(regex);
+	Matcher matcher;
 
 	private ArrayList<Mensagem> caixaEntrada = new ArrayList<Mensagem>();
 	private ArrayList<Mensagem> caixaSaida = new ArrayList<Mensagem>();
@@ -19,7 +26,13 @@ public class Pessoa {
 		this.imagem = imagem;
 	}
 
-	public Pessoa(String email, String senha, String nome) {
+	public Pessoa(String email, String senha, String nome) throws Exception {
+		Matcher matcher = pattern.matcher(email);
+		
+		if ( !matcher.matches() ) {
+			throw new Exception("Fomato de email inválido");
+		}
+		
 		this.email = email;
 		this.senha = senha;
 		this.nome = nome;

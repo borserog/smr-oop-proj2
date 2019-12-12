@@ -16,7 +16,7 @@ public class Administrador extends Pessoa {
 
 	}
 
-	public Administrador(String email, String senha, String nome, String setor) {
+	public Administrador(String email, String senha, String nome, String setor) throws Exception {
 		super(email, senha, nome);
 
 		this.setor = setor;
